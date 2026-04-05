@@ -1,0 +1,352 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflow_Taslak" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_dt_coutryData" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>648,2077</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Workflow_Taslak_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="96">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Taslak" sap:VirtualizedContainerService.HintSize="1201,4908" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_WorkflowName" />
+      <Variable x:TypeArguments="x:String" Name="str_SqName" />
+      <Variable x:TypeArguments="x:String" Name="wikiurl" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_coutryData" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="1092,89" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Workflow'un ne yaptığı buraya yazılmalıdır." />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1092,4796" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Taslak_Try" sap:VirtualizedContainerService.HintSize="1090,4390" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="1056,57" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_WorkflowName]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["CountryDataExtract --&gt; "]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1056,57" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[str_WorkflowName + &quot;Begining&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+          <Sequence DisplayName="Init" sap:VirtualizedContainerService.HintSize="1056,608" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_SqName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">Init --&gt; </InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[wikiurl]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[in_Config("wikiurl").ToString()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[str_SqName + &quot;End&quot;]" />
+          </Sequence>
+          <Sequence DisplayName="Perform" sap:VirtualizedContainerService.HintSize="1056,3009" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="1022,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_SqName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">Perform --&gt; </InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Nüfuslarına göre ülkeler ve bağımlı topraklar listesi - Vikipedi" sap:VirtualizedContainerService.HintSize="1022,2576" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="43c92589-b4ee-4d81-85d7-7bfaedeaa091" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="988,2326" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,177" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;browser açıldı&quot;]" />
+                    <uix:NCheckState DisplayName="Check App State 'Nüfuslarına göre'" sap:VirtualizedContainerService.HintSize="954,606" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="43c92589-b4ee-4d81-85d7-7bfaedeaa091" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,232" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;wiki web sayfası doğru açıldı&quot;]" />
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,355" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;istenilen wiki web sayfası açılamadı&quot;]" />
+                          <Throw Exception="[new SystemException(&quot; SE: istenilen wiki web sayfası açılamadı&quot;)]" sap:VirtualizedContainerService.HintSize="416,116" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://tr.wikipedia.org/wiki/N%C3%BCfuslar%C4%B1na_g%C3%B6re_ba%C5%9Fkentler_listesi" DesignTimeRectangle="487, 312, 436, 32" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Nüfuslarına göre'" FullSelectorArgument="&lt;webctrl parentid='firstHeading' tag='SPAN' aaname='Nüfuslarına göre başkentler listesi' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='firstHeading' tag='SPAN' aaname='Nüfuslarına göre başkentler listesi' type='' class='mw-page-title-main' check:text='Nüfuslarına göre başkentler listesi' /&gt;" Guid="c83cba31-7941-4eac-b04b-a287cc261f5b" ImageBase64="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" InformativeScreenshot="7198143b676ebc95ff447a4e5a2c4e5d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nüfuslarına göre başkentler listesi - Vikipedi' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NCheckState.Target>
+                    </uix:NCheckState>
+                    <ui:RetryScope DisplayName="Retry Scope &gt;&gt; extract country data" sap:VirtualizedContainerService.HintSize="954,742" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                      <ui:RetryScope.ActivityBody>
+                        <ActivityAction>
+                          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,418" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_coutryData]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Sıra' ReferenceIdx='0' Name='Sıra' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Ülke/Toprak' ReferenceIdx='1' Name='Ulke'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Ülke/Toprak Src' ReferenceIdx='2' Name='Ülke/Toprak Src' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Ülke/Toprak Url' ReferenceIdx='3' Name='Ülke/Toprak Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Başkent' ReferenceIdx='4' Name='Baskent'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Başkent Url' ReferenceIdx='5' Name='Başkent Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Nüfus' ReferenceIdx='6' Name='Nufus'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Nüfus Url' ReferenceIdx='7' Name='Nüfus Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Yıl' ReferenceIdx='8' Name='Yıl' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Yıl Url' ReferenceIdx='9' Name='Yıl Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Toplam nüfusa oranı' ReferenceIdx='10' Name='Toplam nüfusa oranı' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Sıra' attr='fulltext' /&gt;&lt;column name='Ülke/Toprak' attr='fulltext' name2='Ülke/Toprak Src' attr2='src' name3='Ülke/Toprak Url' attr3='href' /&gt;&lt;column name='Başkent' attr='fulltext' name2='Başkent Url' attr2='href' /&gt;&lt;column name='Nüfus' attr='fulltext' name2='Nüfus Url' attr2='href' /&gt;&lt;column name='Yıl' attr='fulltext' name2='Yıl Url' attr2='href' /&gt;&lt;column name='Toplam nüfusa oranı' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="43c92589-b4ee-4d81-85d7-7bfaedeaa091" Version="V3">
+                              <uix:NExtractData.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="487, 566, 594, 11250" DesignTimeScaleFactor="1" FriendlyName="'SıraÜlke/ToprakBaşkentN…'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="71592a59-dbd9-479d-bbf1-025982947c6f" InformativeScreenshot="2e2fb719b998fdb5491e350fd1bfcfe3.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nüfuslarına göre başkentler listesi - Vikipedi' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NExtractData.Target>
+                            </uix:NExtractData>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;ülke başkent verileri alındı&quot;]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:RetryScope.ActivityBody>
+                      <ui:RetryScope.Condition>
+                        <ActivityFunc x:TypeArguments="x:Boolean">
+                          <ui:CheckFalse ErrorMessage="{x:Null}" DisplayName="Check False" Expression="[dt_coutryData is Nothing]" sap:VirtualizedContainerService.HintSize="450,131" sap2010:WorkflowViewState.IdRef="CheckFalse_1" />
+                        </ActivityFunc>
+                      </ui:RetryScope.Condition>
+                    </ui:RetryScope>
+                    <Assign sap:VirtualizedContainerService.HintSize="954,175" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="sd:DataTable">[out_dt_coutryData]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="sd:DataTable">[dt_coutryData.Clone()]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Reference" DataTable="[out_dt_coutryData]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="954,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+                    <Assign sap:VirtualizedContainerService.HintSize="954,175" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="sd:DataTable">[out_dt_coutryData]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(From row In dt_coutryData.AsEnumerable()
+Select out_dt_coutryData.Rows.Add(row.ItemArray.Append(row("Ulke")).ToArray())).CopyToDataTable()]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="954,168" sap2010:WorkflowViewState.IdRef="Assign_5">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="sd:DataTable">[out_dt_coutryData]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="sd:DataTable">[out_dt_coutryData.AsEnumerable().Take(3).CopyToDataTable()]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADdSURBVDhPpZMBDYQwDEWZCiQgAgVIQQIGcDALGJiNGcAAMtjl7e6TboRLAJIG1nWvv5+saX7Pvu/pTujco8MFpE7ejfeAGGPq+x45yXufk8MwHOtt2/I+wfeyLKlt21yzrutXARvOuRRCyADWXdcVQHLqCuxQoA+K7IY6AZ3nucgLXAAYBdm8lUMFobUa2XVhIpu2YBzHrMI2mabpGoBcvMAcAQEgW0DrxQlAIJkuwJiV+clxEEBdfwLQDRUaRX8Ig60/lwAC2dZpOtfm/QXIAxv17AfgzX14dSN17gNzNVPv1Lf+SwAAAABJRU5ErkJggg==" sap2010:WorkflowViewState.IdRef="TargetApp_1" InformativeScreenshot="0b8858eee4ea8b0483380c145c78b7ab.jpg" Selector="&lt;html app='msedge.exe' title='*Vikipedi*' /&gt;" Title="Nüfuslarına göre ülkeler ve bağımlı topraklar listesi - Vikipedi" Url="[wikiurl]" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1022,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[str_SqName + &quot;End&quot;]" />
+          </Sequence>
+          <Sequence DisplayName="End" sap:VirtualizedContainerService.HintSize="1056,433" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_SqName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">End --&gt; </InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[str_SqName + &quot;End&quot;]" />
+          </Sequence>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1056,166" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[str_WorkflowName + &quot;End&quot;]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="561.6,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <Throw Exception="[new BusinessRuleException(str_WorkflowName+str_SqName +exception.Message )]" sap:VirtualizedContainerService.HintSize="1090,91" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="561.6,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Throw Exception="[new SystemException(str_WorkflowName+str_SqName +exception.Message )]" sap:VirtualizedContainerService.HintSize="1090,91" sap2010:WorkflowViewState.IdRef="Throw_2" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
