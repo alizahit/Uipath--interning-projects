@@ -3,6 +3,3 @@
 *.log
 project.lock
 
-# Hassas veriler
-**/Data/Config.xlsx
-**/Data/*.xlsx
