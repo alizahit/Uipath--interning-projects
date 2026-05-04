@@ -1,0 +1,6 @@
+{
+  "Name": "My-SalesforceAutomaticContract-001",
+  "ProjectType": "Process",
+  "Description": "My-SalesforceAutomaticContract-001",
+  "MainFile": "Main.xaml"
+}

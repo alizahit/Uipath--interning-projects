@@ -1,0 +1,33 @@
+<HTML><HEAD>
+<STYLE type=text/css>
+        body {
+            font-family: Calibri;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .mapping {
+            background-color: #D3D4D7;
+            color: black;
+            padding: 1px;
+        }
+    </STYLE>
+<!-- Instruct the web browser control to use IE 6 to render the page. -->
+<META content=IE=6 http-equiv=X-UA-Compatible></HEAD>
+<BODY>
+<DIV class=container>
+<DIV class=header>Entegre Bilişim Süreç Sonu Raporu:</DIV>
+<DIV class=content>
+<DIV class=summary-text>Günlük lead skorlama ve Salesforce atama süreci tamamlanmıştır. İşlem sonuçları aşağıdadır: </DIV>
+<TABLE>
+<TBODY>
+<TR>
+<TH>
+<P>Başarılı Atama</P></TH>
+<TD class=success><SPAN class=mapping contentEditable=false>{{basarili}}</SPAN></TD></TR>
+<TR>
+<TH>Hatalı Kayıt (Failed)</TH>
+<TD class=failed><SPAN class=mapping contentEditable=false>{{failed}}</SPAN></TD></TR></TBODY></TABLE>
+<DIV class=footer>Bu e-posta sistem tarafından otomatik oluşturulmuştur. Hata detayları ve Exception logları için UiPath Orchestrator üzerinden&nbsp;<STRONG>Salesforce_AutomaticContract</STRONG> kuyruğunu inceleyin. </DIV></DIV></DIV></BODY></HTML>
