@@ -1,39 +1,65 @@
-### Documentation is included in the Documentation folder ###
+<div align="center">
 
+![UiPath](https://img.shields.io/badge/UiPath-REF-FA4616?style=for-the-badge&logo=uipath&logoColor=white)
+![Salesforce](https://img.shields.io/badge/Salesforce-Integration-00A1E0?style=for-the-badge&logo=salesforce&logoColor=white)
 
-### REFrameWork Template ###
-**Robotic Enterprise Framework**
+</div>
 
-* Built on top of *Transactional Business Process* template
-* Uses *State Machine* layout for the phases of automation project
-* Offers high level logging, exception handling and recovery
-* Keeps external settings in *Config.xlsx* file and Orchestrator assets
-* Pulls credentials from Orchestrator assets and *Windows Credential Manager*
-* Gets transaction data from Orchestrator queue and updates back status
-* Takes screenshots in case of system exceptions
+# 🤖 Salesforce Automated Contract Generator & Dispatcher
 
+This project is a robust Robotic Process Automation (RPA) solution developed using the **UiPath Robotic Enterprise (RE) Framework**. It automates the end-to-end process of generating client contracts based on **Salesforce** data, updating the CRM records, and distributing the finalized documents to relevant stakeholders via email.
 
-### How It Works ###
+## 📖 Project Overview
 
-1. **INITIALIZE PROCESS**
- + ./Framework/*InitiAllSettings* - Load configuration data from Config.xlsx file and from assets
- + ./Framework/*GetAppCredential* - Retrieve credentials from Orchestrator assets or local Windows Credential Manager
- + ./Framework/*InitiAllApplications* - Open and login to applications used throughout the process
+The automation streamlines the contract lifecycle, eliminating manual data entry and ensuring compliance. Key features include:
+* **Automated Contract Generation:** Dynamically populates Word/PDF contract templates with Salesforce record data.
+* **CRM Synchronization:** Automatically updates Salesforce records (e.g., status changes) and attaches the generated documents.
+* **Stakeholder Communication:** Dispatches finalized contracts via automated email to clients and internal teams.
+* **Standardized Error Handling:** Leverages the REFramework for resilient processing, logging, and exception management.
 
-2. **GET TRANSACTION DATA**
- + ./Framework/*GetTransactionData* - Fetches transactions from an Orchestrator queue defined by Config("OrchestratorQueueName") or any other configured data source
+## 🚀 How It Works (Process Workflow)
 
-3. **PROCESS TRANSACTION**
- + *Process* - Process trasaction and invoke other workflows related to the process being automated 
- + ./Framework/*SetTransactionStatus* - Updates the status of the processed transaction (Orchestrator transactions by default): Success, Business Rule Exception or System Exception
+1. **Initialization:** Loads configuration parameters from `Config.xlsx`, initializes Salesforce connections, and sets up the required environment.
+2. **Data Retrieval:** Fetches transaction data (e.g., "Closed Won" Opportunities or new Account records) from an Orchestrator Queue or directly from Salesforce.
+3. **Contract Processing:** Uses Microsoft Word/Document generation activities to populate contract templates with accurate data (Client Name, Pricing, Terms).
+4. **Salesforce Update:** Updates the corresponding Salesforce record to reflect the contract generation and attaches the file to the record.
+5. **Distribution:** Formats and sends an email to the client/stakeholders containing the contract as an attachment.
 
-4. **END PROCESS**
- + ./Framework/*CloseAllApplications* - Logs out and closes applications used throughout the process
+## 🛠️ Workflow Components
 
+### 🏗️ Main.xaml
+The core State Machine following REFramework best practices. It manages the high-level transitions between `Initialization`, `Get Transaction Data`, `Process Transaction`, and `End Process`.
 
-### For New Project ###
+### 📝 ContractEdit.xaml
+The document processing engine.
+* Reads the standardized contract template.
+* Replaces placeholders with dynamic Salesforce data.
+* Exports the final document for distribution.
 
-1. Check the Config.xlsx file and add/customize any required fields and values
-2. Implement InitiAllApplications.xaml and CloseAllApplicatoins.xaml workflows, linking them in the Config.xlsx fields
-3. Implement GetTransactionData.xaml and SetTransactionStatus.xaml according to the transaction type being used (Orchestrator queues by default)
-4. Implement Process.xaml workflow and invoke other workflows related to the process being automated
+### ☁️ SalesforceUpdate.xaml
+Handles the communication with Salesforce.
+* Locates the processed record.
+* Uploads the generated contract document.
+* Updates required fields and object statuses to maintain CRM hygiene.
+
+### 📧 sendmail.xaml
+The communication module.
+* Validates the successful generation of the contract file.
+* Uses Mail Activities to send emails with professional formatting and the contract attached.
+
+## 📋 Input/Output Specifications
+
+| Type | Name | Description |
+| :--- | :--- | :--- |
+| **Input** | `Config.xlsx` | Contains Orchestrator Queue Names, File Paths, and Email configuration. |
+| **Input** | `Salesforce Record` | Entity data containing client details, opportunity products, and terms. |
+| **Output** | `Contract_{ClientName}.pdf/docx` | The generated, finalized contract document. |
+| **Output** | `Email` | Sent to stakeholders/clients with the document attached. |
+
+## ⚙️ Configuration & Best Practices
+
+* **Error Handling:** Wrapped in `Try-Catch` blocks within the REFramework to ensure that system exceptions trigger retries or graceful terminations without partial data commits.
+* **Template Management:** Contract templates are externalized, allowing business users to update legal text without modifying the bot's core logic.
+* **Scalability:** Designed to handle high volumes of contract requests continuously using Orchestrator Queues.
+
+---
