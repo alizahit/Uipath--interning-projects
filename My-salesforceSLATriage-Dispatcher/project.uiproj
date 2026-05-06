@@ -1,0 +1,6 @@
+{
+  "Name": "My-salesforceSLATriage-Dispatcher",
+  "ProjectType": "Process",
+  "Description": "My-salesforceSLATriage-001-Dispatcher",
+  "MainFile": "Main.xaml"
+}

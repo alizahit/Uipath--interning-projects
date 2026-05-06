@@ -1,0 +1,479 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="tempplate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C120002B347__Case.Bundle;assembly=C120002B347__Case.Z3iaV4hNnkO1iy9OH4O3m713" xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C120002B347_curated_account.Bundle;assembly=C120002B347_curated_.rAZ241W3FCM1JqJlP4vsLSR" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_dt_veriler" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>tempplate_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C120002B347_curated_lead.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C120002B347_curated_soqlQuery_List_V5A2K5H1VFQMX6Z1T53Z1EFYFCB1WV.Bundle</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C120002B347__Case.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C120002B347_curated_account.Bundle</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>C120002B347_curated_.AOFzZ2ZgWyH1BfZL34SNyAl3</AssemblyReference>
+      <AssemblyReference>C120002B347_curated_.dS56Z2ysXCS1YgBRf4wSJyF3</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>C120002B347__Case.Z3iaV4hNnkO1iy9OH4O3m713</AssemblyReference>
+      <AssemblyReference>C120002B347_curated_.rAZ241W3FCM1JqJlP4vsLSR</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="tempplate" sap:VirtualizedContainerService.HintSize="1220,6721" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="WfName" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_veriler" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="558,89" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Write your comments in the Text property" />
+    <Assign sap:VirtualizedContainerService.HintSize="558,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[WfName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["SerachCase"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="558,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;&gt;&gt; &quot;+WfName + &quot; workflowu başladı&quot;]" />
+    <Sequence DisplayName="Seq&gt;&gt; init" sap:VirtualizedContainerService.HintSize="558,525" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;&gt; init adımı başladı&quot;]" />
+      <ui:BuildDataTable DataTable="[dt_veriler]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;CaseID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;caseName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CaseDescription&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CasePriority&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AccountName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AccountAnnualRevenue&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;&gt; init adımı bitti&quot;]" />
+    </Sequence>
+    <Sequence DisplayName="Seq&gt;&gt;  process" sap:VirtualizedContainerService.HintSize="558,4960" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="uiascb:_Case[]" Name="Cases" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="524,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;&gt; process adımı başladı&quot;]" />
+      <TryCatch DisplayName="Try Catch&gt;&gt; Search Records" sap:VirtualizedContainerService.HintSize="524,692" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch.Try>
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="450,319" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <isactr:ConnectorActivity Configuration="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" ConnectionId="5174490e-be82-4166-9ac9-0d120002b347" DisplayName="Search Records" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="3429b475-2be8-363b-9833-9ff2f11af445">
+              <isactr:ConnectorActivity.FieldObjects>
+                <isactr:FieldObject Name="Jit_Case" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="uiascb:_Case[]">[Cases]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="_where" Type="FilterTreeValue">
+                  <isactr:FieldObject.Value>
+                    <isactr:FilterValuesTree>
+                      <isactr:FilterValuesTree.Values>
+                        <isactr:EnumItem Value="New" />
+                        <isactr:EnumItem Value="Working" />
+                      </isactr:FilterValuesTree.Values>
+                    </isactr:FilterValuesTree>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+              </isactr:ConnectorActivity.FieldObjects>
+            </isactr:ConnectorActivity>
+          </Sequence>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw Exception="[new SystemException(&quot; SE: SearchCase workflowu, Search Records aktivitesi hatası&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              </Sequence>
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+        <TryCatch.Finally>
+          <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </TryCatch.Finally>
+      </TryCatch>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="524,175" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[&quot;vaka kayıtları alındı&gt; &quot;+Cases.Count.ToString]" />
+      <ui:ForEach x:TypeArguments="uiascb:_Case" CurrentIndex="{x:Null}" DisplayName="For Each current_Case" sap:VirtualizedContainerService.HintSize="524,3485" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Cases]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="uiascb:_Case">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="uiascb:_Case" Name="current_Case" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,3354" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="accountID" />
+                <Variable x:TypeArguments="uiascb1:curated_account" Name="accountt" />
+                <Variable x:TypeArguments="x:String" Name="annualRevenue" />
+                <Variable x:TypeArguments="x:String" Name="priorityy" />
+                <Variable x:TypeArguments="x:String" Name="descriptionn" />
+                <Variable x:TypeArguments="x:String" Name="caseID" />
+                <Variable x:TypeArguments="x:String" Name="accountName" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[current_Case.AccountId Is Nothing]" sap:VirtualizedContainerService.HintSize="488,2242" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,572" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="LogMessage_21" Message="[&quot;bu case'de account id olmadığı için name ve annual revenue yoktur&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[accountName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="LogMessage_19" Message="[&quot;accaunt name 'null' olarak girildi&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_11">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[annualRevenue]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">["0"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="LogMessage_20" Message="[&quot;annual revenue 'null'girildi&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,1531" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[accountID]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[current_Case.AccountId]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[&quot;accountID alındı&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <TryCatch DisplayName="Try Catch&gt;&gt; Get Account" sap:VirtualizedContainerService.HintSize="452,609" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch.Try>
+                        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="450,236" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACoVV/U8bORD9VyxLVX8JWwKc7oSETiSUazgoEaGt1FNVGe9s4otjb/1Bm1vlf79n7+ajBFRFRLHnzXjmvZmh4ZeKdOmH1gShDDl+2vAJCSdn4kFTa+Sn/3zp8XfCfzCqUlTeL2vCZXCRenxk6hg2uIa/Fwvip1xGJwKVX4WUNpowKnmPXyhfa7HsEOethY0ukom8dKoOyhqY0gMs1sGyY4ZEnJCBnGe2YmFGzMCfweZJkwz5qnuFWcdq4f3mPLoo8MekMExob9kDMUfBKXqkklXOLrI3TsDiejolx2wMqAg5pSyQjIfBTHGeWBduXZk46vf4tbXzWCe6bh/+RR7P183XwI9Cx2TPRIxFmOH3myfgP6tM41kK1cvA1jedE7ktt6C85NDjUmmwglD4TqR9n5Gj7Mu0mhN7/aqpMmT16jVfZYrVFMBmrcPWtUleK3bAmlG5ys+KcrC8oEpEHdZCj61XnT5jpxbCLVPUrPy5TIauT+7oW1SOyrVfRlxbKdbOqXgU4W8ozGw5hrwLQiItfoUIt1mB/Z66UuHrPr/PdtV+S0HnVtlts2TdtkJ/UCm1YmQCTfEI/CbkHpWkItX3iOLJF5NPb01ofw77R4eHh0eD45Pfn6ZVDKIpNRVPrnvsOZ/CnX8+Oul/Or4c3vSvvl3p8cmjv57c9dhHdD3SOOsXh+kDd+gRobKhGJzQPTaOD1rJv2l5b+dkzkzUmrcSkIdyFboeEtyRr6EPvSRJS3gWBRxn62a8/Q32wjrAjmn1BervLoShXdQIiK2xXQ0+CCNpIzHUbHhXFJ7NZeFVLB8DJaxDHbiOCnFmB15o8pV1kg58VUrgOhmWnV7Dlj8YfjGB70Ko22aD+S8KgyUmCNknBrT6j8p14C4CIGzbR0MhZ1TuTHGuYn+/nSbyV2v8wNnvntwo0CLhcd8NDWrMs9wO8VjIuZjSLidHv/1MSpfUZEPHrnHXsX9c9P/YsPHSWAyEpxaB6y1Hv6DwtqZ2JGC96zboHrNv71/ebW+aPcbyphFmGkEAPMjgfCN+jHGcQBVsWYxK/r8zcCTmWMLDGeCJ/66v7+lHGGgr53n1rP4HWsnoy80GAAA=" ConnectionId="5174490e-be82-4166-9ac9-0d120002b347" DisplayName="Get Account" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="ConnectorActivity_4" UiPathActivityTypeId="7077922d-751a-3243-9d39-957cc550c0d7">
+                            <isactr:ConnectorActivity.FieldObjects>
+                              <isactr:FieldObject Name="curated_accountId" Type="FieldArgument">
+                                <isactr:FieldObject.Value>
+                                  <InArgument x:TypeArguments="x:String">[accountID]</InArgument>
+                                </isactr:FieldObject.Value>
+                              </isactr:FieldObject>
+                              <isactr:FieldObject Name="Jit_curated_account" Type="FieldArgument">
+                                <isactr:FieldObject.Value>
+                                  <OutArgument x:TypeArguments="uiascb1:curated_account">[accountt]</OutArgument>
+                                </isactr:FieldObject.Value>
+                              </isactr:FieldObject>
+                            </isactr:ConnectorActivity.FieldObjects>
+                          </isactr:ConnectorActivity>
+                        </Sequence>
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw Exception="[new SystemException(&quot; SE: SearchCase workflowu, Get Account aktivitesi hatası&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                            </Sequence>
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                      <TryCatch.Finally>
+                        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </TryCatch.Finally>
+                    </TryCatch>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;account bilgisi salesforce'dan alındı&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[accountName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[accountt.Name]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_16" Message="[&quot;account name alındı&gt; &quot;+accountName]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[annualRevenue]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[accountt.AnnualRevenue.ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;annual revenue alındı&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <Sequence sap:VirtualizedContainerService.HintSize="488,665" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Assign&gt;priority" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[priorityy]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[current_Case.Priority]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="LogMessage_15" Message="[&quot;priority alındı&quot;]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
+                <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[descriptionn]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[current_Case.Description]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[caseID]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[current_Case.Id]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{caseID,current_Case.Subject,descriptionn,priorityy,accountName,annualRevenue}]" DataTable="[dt_veriler]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="488,221" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,166" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;'&quot;+current_Case.Subject+&quot;' için tüm veriler eklendi&quot;]" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEach>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="524,175" sap2010:WorkflowViewState.IdRef="LogMessage_18" Message="[&quot;döngü bitti&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="524,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;&gt; process adımı bitti&quot;]" />
+    </Sequence>
+    <Sequence DisplayName="Seq&gt;&gt; end" sap:VirtualizedContainerService.HintSize="558,608" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;&gt; end adımı başladı&quot;]" />
+      <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_9">
+        <Assign.To>
+          <OutArgument x:TypeArguments="sd:DataTable">[out_dt_veriler]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="sd:DataTable">[dt_veriler]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;&gt; end adımı bitti&quot;]" />
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="558,166" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;&gt;&gt; &quot;+WfName + &quot; workflowu bitti&quot;]" />
+  </Sequence>
+</Activity>

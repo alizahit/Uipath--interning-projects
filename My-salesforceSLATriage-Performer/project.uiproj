@@ -1,0 +1,6 @@
+{
+  "Name": "My-salesforceSLATriage-Performer",
+  "ProjectType": "Process",
+  "Description": "My-salesforceSLATriage-Performer",
+  "MainFile": "Main.xaml"
+}
