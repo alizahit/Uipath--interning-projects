@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="xSRDxrGP5UqoqrLf2X2L7g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="linkedin.com/mynetwork/invite-connect/connections" DesignTimeRectangle="404, 97, 34, 34" ElementType="Icon" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='linkedin-bug-blue-medium' tag='svg' /&gt;" Guid="d4efe24e-a26c-4a01-b267-1969f4da1af2" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Bağlantılar | LinkedIn' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="f717d3bc2717bebca7fefe58b48b64bc.jpg" xmlns="">0SxRem-L-U0WeguJwdLUc7w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Edge Faaliyet Akışı  LinkedIn(1)",
+  "Type": "Screen",
+  "Id": "PnN_syfH7kWn5g1DSARevw",
+  "Reference": "Up9RGZ7DA0WNL9eHnaLN_Q/PnN_syfH7kWn5g1DSARevw",
+  "ParentRef": "Up9RGZ7DA0WNL9eHnaLN_Q/-Zb_RBOcuEm-baKs8ttPIQ",
+  "Created": "2026-05-08T09:23:05.6440521Z",
+  "Updated": "2026-05-08T09:23:05.6440521Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.31.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

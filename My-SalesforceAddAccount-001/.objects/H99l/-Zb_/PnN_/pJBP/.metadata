@@ -1,0 +1,14 @@
+﻿{
+  "Name": "660 bağlantıSıralama öl…",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "pJBPgrq3BkGXW-futJpLtQ",
+  "Reference": "Up9RGZ7DA0WNL9eHnaLN_Q/pJBPgrq3BkGXW-futJpLtQ",
+  "ParentRef": "Up9RGZ7DA0WNL9eHnaLN_Q/PnN_syfH7kWn5g1DSARevw",
+  "Created": "2026-05-08T09:23:05.8347649Z",
+  "Updated": "2026-05-08T09:23:05.8347649Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.31.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

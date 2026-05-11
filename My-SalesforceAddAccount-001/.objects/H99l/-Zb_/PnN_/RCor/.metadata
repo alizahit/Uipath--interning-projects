@@ -1,0 +1,14 @@
+﻿{
+  "Name": "svg linkedin-bug-blue-m…",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "RCor3KnjoUqZHqPdHD45Pw",
+  "Reference": "Up9RGZ7DA0WNL9eHnaLN_Q/RCor3KnjoUqZHqPdHD45Pw",
+  "ParentRef": "Up9RGZ7DA0WNL9eHnaLN_Q/PnN_syfH7kWn5g1DSARevw",
+  "Created": "2026-05-08T13:27:08.372067Z",
+  "Updated": "2026-05-08T13:27:08.372067Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.31.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "660 bağlantıSıralama öl…(1)",
+  "Type": "Element",
+  "Id": "XDRdSO83mk6n73ehALcQDQ",
+  "Reference": "Up9RGZ7DA0WNL9eHnaLN_Q/XDRdSO83mk6n73ehALcQDQ",
+  "ParentRef": "Up9RGZ7DA0WNL9eHnaLN_Q/PnN_syfH7kWn5g1DSARevw",
+  "Created": "2026-05-08T14:04:27.0996859Z",
+  "Updated": "2026-05-08T14:04:27.0996859Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.31.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,555 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="tempplate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C120002B347_Contact.Bundle;assembly=C120002B347_Contact.2EcWR49e4HP1vpPRfbnknV1" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_SalesforceContacts" Type="InArgument(uiascb:Contact[])" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_dt_fitrelenmis" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>tempplate_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C120002B347_curated_lead.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C120002B347_curated_soqlQuery_List_V5A2K5H1VFQMX6Z1T53Z1EFYFCB1WV.Bundle</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C120002B347_Contact.Bundle</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C120002B347_curated_contact.Bundle</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>C120002B347_curated_.AOFzZ2ZgWyH1BfZL34SNyAl3</AssemblyReference>
+      <AssemblyReference>C120002B347_curated_.dS56Z2ysXCS1YgBRf4wSJyF3</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>C120002B347_Contact.2EcWR49e4HP1vpPRfbnknV1</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>C120002B347_curated_.0DFUbJOy2F1kxU8a2EHMxj3</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="tempplate" sap:VirtualizedContainerService.HintSize="1220,7720" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="WfName" />
+      <Variable x:TypeArguments="x:String" Name="str_LinkedInUrl" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_extracted" />
+      <Variable x:TypeArguments="x:Int32" Name="int_NewHeight" />
+      <Variable x:TypeArguments="x:Int32" Name="int_OldHeight" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="558,89" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Write your comments in the Text property" />
+    <Assign sap:VirtualizedContainerService.HintSize="558,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[WfName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["ExtractLinkedIn"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="558,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;&gt;&gt; &quot;+WfName + &quot; workflowu başladı&quot;]" />
+    <Sequence DisplayName="Seq&gt;&gt; init" sap:VirtualizedContainerService.HintSize="558,1474" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_linkedin" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;&gt; init adımı başladı&quot;]" />
+      <Sequence sap:VirtualizedContainerService.HintSize="450,433" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_LinkedInUrl]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[in_Config("LinkedInUrl").ToString]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_16" Message="[&quot;linkedin url alındı&quot;]" />
+      </Sequence>
+      <Sequence sap:VirtualizedContainerService.HintSize="450,608" sap2010:WorkflowViewState.IdRef="Sequence_18">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">[int_OldHeight]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_8">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">[int_NewHeight]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">[-1]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_21" Message="[&quot;default height değerleri alındı&quot;]" />
+      </Sequence>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,166" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;&gt; init adımı bitti&quot;]" />
+    </Sequence>
+    <Sequence DisplayName="Seq&gt;&gt;  process" sap:VirtualizedContainerService.HintSize="558,5010" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_fitrelenmis" />
+        <Variable x:TypeArguments="s:SystemException" Name="exInvokeCode" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="524,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;&gt; process adımı başladı&quot;]" />
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="524,2924" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch.Try>
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="522,2551" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Faaliyet Akışı  LinkedIn" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2491" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="cf0bd8e5-0fa7-4a5e-a7d3-6fcecb0bb6f6" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2297" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="str_Height" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;browser açıldı&quot;]" />
+                    <uix:NCheckState DisplayName="Check App State 'svg linkedin-bug-blue-m…'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="cf0bd8e5-0fa7-4a5e-a7d3-6fcecb0bb6f6" Version="V5">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[&quot;linkedin açıldı&quot;]" />
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Throw Exception="[new SystemException(&quot; SE: linkedin açılamadı&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="linkedin.com/mynetwork/invite-connect/connections" ContentHash="xSRDxrGP5UqoqrLf2X2L7g" DesignTimeRectangle="404, 97, 34, 34" ElementType="Icon" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='linkedin-bug-blue-medium' tag='svg' /&gt;" Guid="d4efe24e-a26c-4a01-b267-1969f4da1af2" InformativeScreenshot="f717d3bc2717bebca7fefe58b48b64bc.jpg" Reference="Up9RGZ7DA0WNL9eHnaLN_Q/RCor3KnjoUqZHqPdHD45Pw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Bağlantılar | LinkedIn' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each currentNumber" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(0, 7)]">
+                      <ui:ForEach.Body>
+                        <ActivityAction x:TypeArguments="x:Int32">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,483" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,257" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" InteractionMode="HardwareEvents" ScopeIdentifier="cf0bd8e5-0fa7-4a5e-a7d3-6fcecb0bb6f6" Shortcuts="[d(hk)][d(ctrl)][k(Minus)][u(ctrl)][u(hk)]" Version="V5" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_23" Message="[&quot;sayfa küçültüldü&quot;]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEach.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ForEach>
+                    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[int_OldHeight&lt;&gt;int_NewHeight]" DisplayName="While" sap:VirtualizedContainerService.HintSize="452,1793" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                      <ui:InterruptibleWhile.Body>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,1662" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[int_OldHeight]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[int_NewHeight]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;oldheight&gt;&quot;+int_OldHeight.ToString+&quot;  /   newheight&gt;&quot;+int_NewHeight.ToString]" />
+                          <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts '660 bağlantıSıralama öl…(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,329" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="cf0bd8e5-0fa7-4a5e-a7d3-6fcecb0bb6f6" Shortcuts="[d(hk)][k(End)][u(hk)]" Version="V5">
+                            <uix:NKeyboardShortcuts.Target>
+                              <uix:TargetAnchorable BrowserURL="linkedin.com/mynetwork/invite-connect/connections" ContentHash="93Z7J8XgoUCzyRijdg3ZQw" DesignTimeRectangle="12, 140, 1912, 896" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='workspace' tag='MAIN' /&gt;" Guid="89315033-d37d-489b-82da-30da602ce708" InformativeScreenshot="84052242c1f456a3e2ca03e3278b2a3a.jpg" Reference="Up9RGZ7DA0WNL9eHnaLN_Q/XDRdSO83mk6n73ehALcQDQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Bağlantılar | LinkedIn' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NKeyboardShortcuts.Target>
+                          </uix:NKeyboardShortcuts>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_19" Message="[&quot;end tuşuna basıldı&quot;]" />
+                          <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// sayfanın yüksekliğini alacak js kodu" />
+                          <uix:NInjectJsScript InputParameter="{x:Null}" DisplayName="Inject Js Script '660 bağlantıSıralama öl…(1)'" ExecutionWorld="[UiPath.UIAutomationNext.Enums.NExecutionWorld.Page]" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="NInjectJsScript_1" ScopeIdentifier="cf0bd8e5-0fa7-4a5e-a7d3-6fcecb0bb6f6" ScriptCode="function(e, element) {&#xA;    var ws = document.getElementById('workspace');&#xA;    if(ws) { return ws.scrollHeight.toString(); }&#xA;    return '0';&#xA;}" Timeout="10" Version="V5">
+                            <uix:NInjectJsScript.ScriptOutput>
+                              <OutArgument x:TypeArguments="x:String">[str_Height]</OutArgument>
+                            </uix:NInjectJsScript.ScriptOutput>
+                            <uix:NInjectJsScript.Target>
+                              <uix:TargetAnchorable BrowserURL="linkedin.com/mynetwork/invite-connect/connections" DesignTimeRectangle="12, 140, 1912, 896" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='workspace' tag='MAIN' /&gt;" Guid="89315033-d37d-489b-82da-30da602ce708" InformativeScreenshot="84052242c1f456a3e2ca03e3278b2a3a.jpg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Bağlantılar | LinkedIn' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NInjectJsScript.Target>
+                          </uix:NInjectJsScript>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[&quot;str_Height&gt;&quot;+str_Height]" />
+                          <Assign DisplayName="Assign&gt;&gt; newheight " sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_6">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[int_NewHeight]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[CInt( str_Height)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ui:InterruptibleWhile.Body>
+                    </ui:InterruptibleWhile>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts '660 bağlantıSıralama öl…(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="HardwareEvents" ScopeIdentifier="cf0bd8e5-0fa7-4a5e-a7d3-6fcecb0bb6f6" Shortcuts="[d(hk)][k(Home)][u(hk)]" Version="V5">
+                      <uix:NKeyboardShortcuts.Target>
+                        <uix:TargetAnchorable BrowserURL="linkedin.com/mynetwork/invite-connect/connections" ContentHash="93Z7J8XgoUCzyRijdg3ZQw" DesignTimeRectangle="12, 140, 1912, 896" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='workspace' tag='MAIN' /&gt;" Guid="89315033-d37d-489b-82da-30da602ce708" InformativeScreenshot="84052242c1f456a3e2ca03e3278b2a3a.jpg" Reference="Up9RGZ7DA0WNL9eHnaLN_Q/XDRdSO83mk6n73ehALcQDQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Bağlantılar | LinkedIn' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                      </uix:NKeyboardShortcuts.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="LogMessage_20" Message="[&quot;'home' tuşuna tıklandı&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <uix:NExtractDataGeneric x:TypeArguments="sd:DataTable" ContinueOnError="True" DisplayName="Extract Table Data '660 bağlantıSıralama öl…'" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='ad'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='tarih'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractedData="[dt_extracted]" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,79" sap2010:WorkflowViewState.IdRef="NExtractDataGeneric`1_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="cf0bd8e5-0fa7-4a5e-a7d3-6fcecb0bb6f6" Version="V5">
+                      <uix:NExtractDataGeneric.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/mynetwork/invite-connect/connections/" DesignTimeRectangle="397, 164, 792, 1921" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div' parentid='workspace' tag='DIV' /&gt;" Guid="e30301b2-6622-406d-89c7-c3eadd1ebc42" InformativeScreenshot="33b49f722e6d356b1361fca44dd046ba.jpg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Bağlantılar | LinkedIn' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                      </uix:NExtractDataGeneric.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NExtractDataGeneric>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,48" sap2010:WorkflowViewState.IdRef="LogMessage_18" Message="[&quot;datatable extract edildi. satır sayısı&gt;&quot;+dt_extracted.RowCount.ToString]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.OCREngine>
+                <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+                  <ActivityFunc.Argument>
+                    <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                  </ActivityFunc.Argument>
+                </ActivityFunc>
+              </uix:NApplicationCard.OCREngine>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABLPSURBVGhDvZkHVFRn2sdxld5rTNmT1SSbRLp0QQUMKtKkqBQRu0ajslZEmiAwdMQSjRhLRI0mmqBRUYGpzDAwvcNQxBaTfB+7STb7bUzm/533DoMwCdn9dv32Oed/eM+9d+b+f8/zvO9772Bi8hzCJWVd9vT6T+nu11TDHq19Tz0YA/Bg9MODoYUHoxceTA08WSp4shWYcZMz/Nala9o/0KqvWnt7hxl/138s3FI2Zrs38bXe7Y91PvTH8KI/gCd9CJ6MwRHzfXBn9MKd2QMPpgoeLCU82TJ4sqXw7hDDhyuAL48Pvw7WU/dzH4psfTz+MzBuKe9me18bHPaj/zdm0r+GL/0JCIA3/QG8KIAhIwAN3CkABTxYegBPtkQPwO2GP5+LgC42QoRtCGZ+Mvzy8oRs43s+l7DxDAnz+VT7OID+Lfzpw/Cj/xcFMGqeMQQvxj14Ue3TR7WOHkCtF0s+BkAM7w4hBTCzk4dgAR3BgjaEiVsQLmtGKP3kY4eZbz6/ikzbdaQxoP1bHTEfQP8L/Ol/hqECPoxH8GEQAL15T0PfM3rgwdDAnUEAFJT0ABJ4skXw4gjhw+VjZmcHArqYFMAcyXUKYL7yIhaqPtJ5lq5qNPbyfw7PE1xREP2vCKR/B332iXl99mcynlAA3iMAnoy+MQDEvAruTCVlfgZTDneWDB4sAiCEF0cwAsBDUHcbQgR3MVt8A5HyK1iguojY3g8R23sSUe0lWmNP/3T4NCm0QfQf8AyAZH8Y/gSA8RVmMr6ED+MhvBn34cXopwD0raOmzM9gEOMGyTGDKaXkwRZRED7cTvjz2QjsYlAAYSIC8CmilBcR03MK8doPkDTQgERV+XdWLzu8auzvN8O3SaENof8NzwBI+/yZMu9HmX8yCkBax4vKPsm8oe8NxmVjNB7Ai9OFmbwOBPANADdHAC5gkcYAcAjLhqqxtLf4B2OPE4bXCb6ImA8eBfj+VwC+hC/jIXyoyWvofY2+dZiqkYwT05JR48+kbyNfLg/+nSwEUgC3MVt8HeHSTxGtPo3YnhNI0B7FksEapA7RkPmwCEm8jf+4nV7bdaxxFv3v0AMQ80TfIZD+FwRQ7fPNKMBMqv8H4cXshydTv2GRNV8/aQ3mDTIGEMCb0wk/HgFoRYigBWGi63hHfgELlGdGAI4gZaAWaUPlyHxYiFVP9iLqTNxVY8+jYes5Kyyk/e+6WfT/oQBC6D8gmP4dgujfIpD+Zz0AgwCQ9iGrz/0xAFoKwJ1MVkp6oxOJmgMdPPhyOyiAWYIvqOzrAU5T5pMHqpE2VIK0oVJkPsrHmic7se6rLbqpQVN/fYkN+PT+Y5L98QDfjwAMw6P5Pl4/K8e0RiGmnRRi2ocCTDvJxxsfi/H2LfUYANlvArizJFT/+3R0wI/HRHD3LYSJmjFX8gkipRcRrWpEXM9hJPbVYskgDWlD+5H1aA8xj3e/WYcV0qVDxt5NXkzZmh1K/xHPAH6g5H75AV4qb4fD1o9gt/kj2G27CIftl+C464peOy7DcfsFOG49C5c/ncHvD93BG58Jf2F6rDxYZBJ3w6eDCz8eHUH821QFZguv4B3ZWSxQnkKs5n0k91Ug9V4xlt/fi6yHO7D+q80UwLvfrIHXxrfH79hB174eDqU/hQHC+7Nv4LjzCmw2n4dt9hXY7WyG/e4v4LC3BQ77bsMx/w6cCu7CmdIdOBe0wCXvJpz3fg7n7U1w29uEN74Q/cK8O0sMD7YQnuwu+HawEMBrRTD/BmYLP0O4+BKiZKcQrTyGOM1BJGorsaS/BOlD+yiAtV9uwvona7Hxq1VYqUx+PGr+pZSt2WEj5oNb/4ZXagWw3nwJ1n/6HDY7voDtnhbY5bbCPp8BhyI2HIs74HiAC6cDXDiX8eBSxoVzaQdcDrDgWtIO1/134Zp3HS7bm/By7Q28TR/fTiT7nmw+1UIBvDsUwBzBZUSIz1MAC+QnEKepR3JfGZb252P5vZ1YcT8bqx9twoYna7DxyQps+joDLwa56OeCX5NGG0b/CSGtf4dTfjustjXDescN2Oy+DZtcOmzzObAv4sG+pBsOZUI40sRwqpDCqVIK5yopXKqkcK0Ww6VKCNfKLrjSuHArZcGtpBWuuZ9javGVUQiq/9md8OFwMLOjDQG8FgTzr2O24CIiRGcQJTmOhfKjiFHWIrHnAJb25SJ9cAeyHmzF6gdrsfbhKmz8Mh2bvkrFojOh+hUptP2pjph3LmLDcvtNWO68DaucdtjkcWBTyIdtsQB2pVLYl8tgX6mAY5UKTjVqONVq4FxHpIZLnRqu9Uq41ingWiuBW7UQbhU8uJUx4VpwE1NLmykID5YAXmwevNls+HbQ4c+9jWD+VcwRnkek6ATmS45gkaIOccpyLFYXIrV/NzIGtmHF0HujAOsfZWDD42VYJV/02OSllG3Zs+k/wbVMCIsdd2C5qxVWe1mwyufBukgAmxIpbMvksKOpYF+pgX2VBg41PXCs7YVTXS+c6rVwPqiFy8FeuDZo4drQA9cGDdwOKuFWJ8EL1d14gcaBW1ELXmm4A08WF95sFnw5bfDjtCCI9xmCOq9iTvcZRIo+wHxxPRZKahCnKEWiOg9LenchrW8LMgfWYeXQOqx5sALrH6VRABseLdaZ+B3ni2Zc+ArmO9thsZsBixwOLPP5sCoSwbpEBptSJWzL1bCt0MCusgf2Vb2wr+6FQ60WjnV9cKonIhB9cGnog+uhPrhVi7+3TS87aRW5artVRNZOu7SSsy7773zrWngLf7zSAR82AzM5t+DHuYFg3mWEdF4aATiG+eI6LBRXIF5RiETVbqRodiNVuxXp2vXI7F+FrMFMrH2Qig2PUggATGbd/KvOtlAA891smOd0wCKvC5aFYlgVy2B9QAnrMjVsyjWwreiFbWUv7CgALexrtKMQjgTiYB+ca3vwyuaPvhxdHYzCLrXw3NSym/BhtWAm+zr8OVcR2PExQjtPY07XcUR212OeoBbR4mLEywuQqNyJJeotSO1ZjwztGmT2ZyFrMAOrBpdi7YNkrHsQDxPPi1/DbA8X5jmdsNjXDYsCMSz3y2BZooRVqQrWpWpYl/fAhtbzmxD2e9pgN2dTm7Fp47BbVnjh7eZ2+LGbEcC5hOCOcwjrPIW5XUcR2V2DKCENC0XFWCTOQ4JsB5KUf8IS1Qak9azEcm0qVvQvxcqBZKweXIy19+Nh8uoHD2CWw4dZbjfM88QwL5TBYr8SliUqWJZqYFWmlwHCpqLnFxB2730Oq4jc743NThRvnP1C58f6BEGc0wjinEJY53HM4R9BeNdBzBcUI1pcgBjxLsTLdiJZuQnJyg1I1RCANGT2pWLlQApWDyZg7b1YmDhX9cI0VwizfSKYFUhhXqiE+X4lLErUsDyg1kOMgPwahO2uNlhHFcHcJ+28sdGJwqPuTH8A6ywC2WcQzDmFWdzjmNNZh0h+Cebxi7BQuBsxomzESzZjsXQDkmSrkarJREZPKjK1KcjqS8LqgVisGVwEE3uaBqa5IpjmSWFWIIdZoQLmRSqYF6ufQRyYAGJfJ6yjCmC9iAbT1+flGBudKF7buqcpgHUaQexGhHCOIpRTg7ncMkTyCjGvcx+i+LsRLdiGWNEmLJasQqJ0JZYoMpCqWooMTRIye+KQpY1BumjesMmUXAmm5ElhmieDaYECZoVKmBGA/c8g7MvUeKtejdBjKoQeV2HGIQ2caUpYxVfCOqYCNnF1BGCXsdGJwsbz9bBA5vsIZh5ECPsQBTCbU4IIbh7mdeYgir8T0d1bECtYhwRRFhKlWViqWIZURSLS1Yl6gN4YRBz1vWoyeZ8cU/JkmJIvpwBMC1UUANH8E0o03FagtUsGiVQClUJKiYzbeCI0nG9B9J5zsFl8GKavv7PD2OhEMW13emMQo14PwKxCKJtGAYRzcjCPtwcLOjdjUdcGxArWIEG0AoniVCRLU7FMnoA0ZQIyVDFYro7WWb9k8arJ5H0yUBD5CkzJV8K0QAmfegU+4Sgx2N+Le/29UCtlkEmEkI6IjMmxewO91DWXb3Phm1EuMDY6Ufheow0H0WsRzKxBCLMCYaz9mMPOQzh7F+ZxdyCK9x6i+asRJ8hCXHc6FovSkCRORLI4AUulsUiTL0TUmQA69WWT9oqfTs6TY3KekgJIaZRCrVKir1cNsVhESS6TQK2SQ6WUUVIr5ZBLxRCLBJT6tWoolQrExcWsMDZrHK+siy0PbD+IIHoNQhjFCGUUIIxZiDmsvZjL2o7IjmzM523Ews5ViOnKRHx3OhK6lyBJlIAUSTwFkNK94Nn78aTt3OHf7VNgcp4CyY1S3BvQUoaJcZlYAJVChu4uHq5+ehmnT57A6Q9PUGNBVyd1TiomEELIZWKqGvFxsVnjHI8JMzfHV/1bq3SBbTQEtZcihF6IUMY+hDFyMJe1gwKYx9mI+dw1mN+RhWheOmL5KUjoTsbi7gQkCeOQyFvwg9WLFmN+ocg4Tf9drgKe1XIq83KZFBKxiDJGDLbdvY2aShpKi4tQfqCYEhnXVlWA3nZ3FEIiJhASKOWSH99884/eY40bggAE3Cl+GthWiuD2/Qhpz0MofS/CGLswl7UNEayNmMci5ldiQUcGornLENeVgviuRCQKErCoJeqx5TjzJAIysyfvU+AyQzTaNsSQUi4Fr4OFKloZKsoOUBDVFeWUyJgcI2M+jwOFTAKZWEhVol+rQdO5M7zxN3kWTuGeywLvFDwNad+HWe05CG3fhTDGTsxlbkIEaz3msVbhHfYqLOCkI5q7BLGdiYjnx+sCq/0nfpmPPCzVDQ1o9W0jIQD6Sdp09jTKSvZThgmIAYCMDVW52PQRdS35DPksgSCtFDorZIHxfcbG79eGl888t04bfGvLD7PpWzCX8S4imOsQyVyNKPZyRLFTdeHN8Y89c30aLada/vaPWoeaed8PDvSNZl8PIcCRQ/VUpseaHwtBKy3BsSOHIJcawPXz4d5AH6prapuN7/P/EpaWltZ0JnOYrCzSkewTQxJRNw4frPtNAHLuSEM9ZZx8hnyWSKNS4C6TpzOzf+EN4/s993jrzTd9ZBLhzySDBunngAQnPzhGTVqD4bHmyV9y7lTjB9TmZqgcEYERiYRwX39WZ+6eWG58z+cawcFB76iVMp1ULNSRClAbllhA9fXtW19QfT52Ao8VOXf39s0xAPoKEAiSgNnbL8Au+QPYxtUPT3Z+/dd/jPonY4rjtDDzP8z+5T8/AgL8I4gBUgUCoO9nPQQxcaHpLA7sLxxtJUPvk2OXLjZBqZCMmh/bRuQ7DQCUko7DNrZ22NJ3eeMkS6ffnpRjwuKtmHLbiFytY0wNHGOqYflm9PiKTp8+7W2JqPsnuVSkk0mEOkMLEEMGU9c/v4qjhw6irrqS0vuHG3Dj2udQyMTjrnvWQmSXFsJj/UfjAOySjsE+8X1Kdouqh23Cc0TWYdvoZtMjss2mh2ebTw/PtgpYc9UmZAvdbmHZsH1Mrc4hthZEBMBhUZVuiuMfxlfS3Nzcou1uy0N9Gwl+fmbm2TNPb48SYkEXmO2tYNJbIRZ2UccMz0hjAfSTWI5WdieclzVOCGC/+CjsFx+B/eLDsE8gOgSH+AY4xB+EQxxRPRxi6yjzBgArzyW//h+b+rqaK/f6e38WC7t+NLQBaR9i7NaNa/jwxHE01NWMVoCMybGWG9chH+l3w+plWEYbLrbCLuXEcwOwDdsuMvY9GhHhc+PJM5BY2PVUKhboVAqpjsOiU61CNjKy2lSWl44TOUbOvX+kAR1sxsgjhX43Jk+w83MuPTcAMgeMPY+LSZMm/e7Sx+eF2h4VyeJTetsdYlJHJutEKxAROUdAqmjlYLTfpZ6jyOPIxRss2KU0PheAf2jeEO4zZvj3apQ/8Xmcp5W00p9IlqsrynXE3EQbGTlXU1mhX6EqaOji86BRq+D73vnnAmAze+fEbfNrsXRJyvqPz58jWf25srz06YhZncHsM/N6VVfoq1NZQSpRgksXmpBW+hlsl5z8twDsY+t1Fm/F/msbYICf39raqoofG2qrSWafEpAqWtnPVbSykWqMqIKGyooKVNBoaKitQW1NDWZtqIdt0vuwNZj/FwDs5pc8nuw0/d/a9Exeefll/+wt73HJs9Dh+lpq5RlpG1INHRmTY+QcuSab1ojf57FBXozM1zXDOvEIZVZv/rhe/wDAblHFMNkHjL38W+Hp4Z64ckXmJ/m5e4dIJchLDBEZ5xcUfb2y6Nj3HgV3dZP2yjEpVwHyYkS93e2VwnxzK6wyL8Au4RDsyMZFlETMH4X9CKBt2mnYRub1kY3M+N7PNUxNTa3c3Nzeev216RFEZGxqamo5ekFAZrZJxim6yXbu8KQcyVMCYXhNJe/aZru7Yb6LB8tsBhy23fnphfea/zI1vZ497ib/YvwvF8NZFSslksIAAAAASUVORK5CYII=" InformativeScreenshot="9f1ab87a76bc7447a28f27fdb7a376fc.jpg" Selector="&lt;html app='msedge.exe' title='*LinkedIn*' /&gt;" Url="[str_LinkedInUrl]" Version="V3">
+                  <uix:TargetApp.Arguments>
+                    <InArgument x:TypeArguments="x:String" />
+                  </uix:TargetApp.Arguments>
+                  <uix:TargetApp.WorkingDirectory>
+                    <InArgument x:TypeArguments="x:String" />
+                  </uix:TargetApp.WorkingDirectory>
+                </uix:TargetApp>
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,174" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw Exception="[new SystemException(&quot; SE: browser açılamadı&quot;)]" sap:VirtualizedContainerService.HintSize="488,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+              </Sequence>
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+        <TryCatch.Finally>
+          <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="522,25" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </TryCatch.Finally>
+      </TryCatch>
+      <If Condition="[dt_extracted is Nothing]" sap:VirtualizedContainerService.HintSize="524,338" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_19">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Throw Exception="[new SystemException(&quot; SE: dt_exrtacted içi boş&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_3" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_20">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="524,1315" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch.Try>
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486,727" sap2010:WorkflowViewState.IdRef="Sequence_21">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="452,479" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// İşlev: io_dt_extracted veri tablosundaki &quot;tarih&quot; sütununda yer alan metinleri standart tarih formatına dönüştürür.&#xA;&#xA;Adım 1: RegEx (&quot;\d{1,2}\s+\p{L}+\s+\d{4}&quot;) kullanılarak metin içerisindeki Gün-Ay(Yazı)-Yıl verisi izole edilir.&#xA;&#xA;Adım 2: Eşleşen veri, &quot;tr-TR&quot; (Türkçe) dil kurallarına göre ayrıştırılarak DateTime objesine çevrilir.&#xA;&#xA;Adım 3: Hücre verisi &quot;dd/MM/yyyy&quot; formatında (Örn: 13/04/2026) üzerine yazılarak güncellenir.&#xA;&#xA;Hata Yönetimi: Try-Catch bloğu ile olası ayrıştırma (Parse) hataları yakalanır ve akışın durması engellenerek hata detayı 'io_exInvokeCode' dışa aktarım (Out) argümanına atanır." />
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xA;&#x9;Dim cult As New System.Globalization.CultureInfo(&quot;tr-TR&quot;)&#xA;&#x9;&#x9;&#xA;&#x9;For Each row As DataRow In io_dt_extracted.Rows&#xA;&#x9;    Dim val = System.Text.RegularExpressions.Regex.Match(row(&quot;tarih&quot;).ToString(), &quot;\d{1,2}\s+\p{L}+\s+\d{4}&quot;).Value&#xA;&#x9;    &#xA;&#x9;    If val &lt;&gt; &quot;&quot; Then &#xA;&#x9;        row(&quot;tarih&quot;) = DateTime.Parse(val, cult).ToString(&quot;dd/MM/yyyy&quot;)&#xA;&#x9;    End If&#xA;&#x9;Next&#xA;Catch ex As SystemException&#xA;&#x9;io_exInvokeCode = ex&#xA;End Try" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="452,188" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+              <ui:InvokeCode.Arguments>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_extracted">[dt_extracted]</InOutArgument>
+                <InOutArgument x:TypeArguments="s:SystemException" x:Key="io_exinvokecode">[exInvokeCode]</InOutArgument>
+              </ui:InvokeCode.Arguments>
+            </ui:InvokeCode>
+          </Sequence>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,389" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If Condition="[not IsNothing(exInvokeCode)]" sap:VirtualizedContainerService.HintSize="452,329" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Throw Exception="[new SystemException(&quot; SE: invoke code hatası&gt;&gt; &quot;+exInvokeCode.ToString)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+        <TryCatch.Finally>
+          <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="486,25" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </TryCatch.Finally>
+      </TryCatch>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="524,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;&gt; process adımı bitti&quot;]" />
+    </Sequence>
+    <Sequence DisplayName="Seq&gt;&gt; end" sap:VirtualizedContainerService.HintSize="558,608" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;&gt; end adımı başladı&quot;]" />
+      <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="sd:DataTable">[out_dt_fitrelenmis]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(From row In dt_extracted.AsEnumerable()
+ Where Not in_SalesforceContacts.Any(Function(c) c.Description IsNot Nothing AndAlso c.Description.ToString().Trim().Equals(row("url").ToString().Trim(), StringComparison.OrdinalIgnoreCase))
+ Select row).CopyToDataTable()]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;&gt; end adımı bitti&quot;]" />
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="558,166" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;&gt;&gt; &quot;+WfName + &quot; workflowu bitti&quot;]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Edge Faaliyet Akışı  LinkedIn",
+  "Type": "App",
+  "Id": "H99l4mgH8UCYtWEIN8sl7Q",
+  "Reference": "Up9RGZ7DA0WNL9eHnaLN_Q/H99l4mgH8UCYtWEIN8sl7Q",
+  "Created": "2026-05-08T09:00:32.8099178Z",
+  "Updated": "2026-05-08T09:00:32.8099178Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.31.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

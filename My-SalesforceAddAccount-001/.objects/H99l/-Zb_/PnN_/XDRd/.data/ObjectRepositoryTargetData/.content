@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="93Z7J8XgoUCzyRijdg3ZQw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="linkedin.com/mynetwork/invite-connect/connections" DesignTimeRectangle="12, 140, 1912, 896" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='workspace' tag='MAIN' /&gt;" Guid="89315033-d37d-489b-82da-30da602ce708" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Bağlantılar | LinkedIn' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="84052242c1f456a3e2ca03e3278b2a3a.jpg" xmlns="">09XUzSlpM60WnVaaniEEemA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">KeyboardShortcut</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

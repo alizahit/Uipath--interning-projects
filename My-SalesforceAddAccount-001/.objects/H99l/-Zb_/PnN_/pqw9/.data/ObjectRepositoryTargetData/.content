@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="pq7a81Zwi0ShYQpkL50F3g" Reference="Up9RGZ7DA0WNL9eHnaLN_Q/pqw9V0Uu8U6a8XOHqQrc_g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="linkedin.com/mynetwork/invite-connect/connections" DesignTimeRectangle="778, 1020, 30, 30" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='12' isleaf='1' parentid='workspace' tag='SPAN' /&gt;" Guid="706ec904-b3a9-4700-b16b-dc24d7de855b" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*LinkedIn*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="93d18145443e62c592ca615646c8948c.jpg" xmlns="">0Pe0C337i7k-6vplQK9IfYw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
